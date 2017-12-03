@@ -15,6 +15,7 @@ import com.services.LoginServices;
 
 public class LoginServlets extends HttpServlet {
 	
+	private static final long serialVersionUID = 7658192772554535814L;
 	private LoginServices loginservices;
 
 	@Override
