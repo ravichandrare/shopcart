@@ -5,19 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+<style>
+body{
+	background-color:green;
+}
+</style>
 </head>
 <body>
-	
-	<div>
-	<form name="help" action="help" method="post">
-	<input type = "submit" name="helpaction" value = "Help"/>&nbsp;
-	<input type="hidden" name="help" value="Help" />
-	</form>
-	
-	<form name="logout" action="login" method="post">
-	<input type = "submit" name="action" value = "Logout"/>&nbsp;
-	
-	</form>
-	</div>	
+
+<h1><i>For any helps and Issues contact ShopCart.com</i></h1>
+
 </body>
 </html>

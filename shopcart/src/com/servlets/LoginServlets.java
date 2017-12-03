@@ -2,6 +2,7 @@ package com.servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,16 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.services.CartServices;
 import com.services.LoginServices;
 
 public class LoginServlets extends HttpServlet {
 	
 	private static final long serialVersionUID = 7658192772554535814L;
+	private CartServices cartService;
 	private LoginServices loginservices;
+	
 
 	@Override
 	public void init() throws ServletException {
-		loginservices=new LoginServices();
+		loginservices = new LoginServices();
+		cartService = new CartServices();
+		
 	}
 	
 	
@@ -46,6 +52,8 @@ public class LoginServlets extends HttpServlet {
 						isvalid = loginservices.authenticate(username,password);
 						if(isvalid) {
 							nextpage="/cart.jsp";
+							req.setAttribute("products",cartService.getproducts());
+							
 						}
 						else
 						{
@@ -53,10 +61,8 @@ public class LoginServlets extends HttpServlet {
 							req.setAttribute("loginerror", "Invalid username or passwaord");
 						}
 					} catch (ClassNotFoundException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					

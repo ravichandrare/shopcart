@@ -9,14 +9,33 @@
   </welcome-file-list>
   
   <servlet>
-  <servlet-name>shopping cart</servlet-name>
+  <servlet-name>shopping login</servlet-name>
   <servlet-class>com.servlets.LoginServlets</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>shopping cart</servlet-name>
+  <servlet-name>shopping login</servlet-name>
   <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>shoppinghelp</servlet-name>
+  <servlet-class>com.servlets.HelpServlet</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+  <servlet-name>shoppinghelp</servlet-name>
+  <url-pattern>/help</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>shoping cart</servlet-name>
+  <servlet-class>com.servlets.CartServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>shoping cart</servlet-name>
+  <url-pattern>/cart</url-pattern>
+  </servlet-mapping>  
 </web-app>

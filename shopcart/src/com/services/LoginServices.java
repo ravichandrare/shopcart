@@ -12,7 +12,7 @@ import com.shoping.dao.ConnectionUtil;
 public class LoginServices {
 	
 	public boolean authenticate(String username,  String password) throws ClassNotFoundException, SQLException
-	{
+	{												
 		Connection con=ConnectionUtil.getConnection();
 		String ps = null;
 		if(username!=null||password!=null) {

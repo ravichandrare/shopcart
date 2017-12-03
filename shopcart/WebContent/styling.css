@@ -1,42 +1,49 @@
 @charset "ISO-8859-1";
 
 #header {
-	background:grey;
+	background: grey;
 	position: absolute;
-  	right: 0;
-  	top: 0;
-  	left: 0;
-  	height:20%;
-  	text-align: center;
+	right: 0;
+	top: 0;
+	left: 0;
+	height: 20%;
+	text-align: center;
 }
 
-#menu{
-	
-	background:grey;
-	position:absolute;
-	top:20%;
-	left:0;
-	right:90%;
-	bottom:10%;
-	
-	
-	
-	
-}
-#footer
-{
-	
-	background:grey;
+#menu {
+	background: grey;
 	position: absolute;
-  	right: 0;
-  	bottom: 0;
-  	left: 0;
-  	height:10%;
-  	text-align: center;
+	top: 20%;
+	left: 0;
+	right: 90%;
+	bottom: 10%;
 }
 
-#cart
-{
-	background:orange;;
+	
+	table, th, td {
+    border: 1px solid black;
+}
+
+#content {
+
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	right: 0;
+	bottom: 10%;
+}
+
+#footer {
+	background: grey;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 10%;
+	text-align: center;
+}
+
+#cart {
+	background: orange;;
 	text-align: center;
 }

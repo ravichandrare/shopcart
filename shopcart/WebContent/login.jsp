@@ -26,11 +26,11 @@
 		%>
 		<br> <br>
 		<form name="login" action="login" method="post">
-			Username: <input type="text" name="username" /><br>
-			<br> Password: <input type="password" name="password" /><br>
-			<br> <input type="submit" name="action" value="Login" />&nbsp; <input
-				type="Reset" value="Reset" /> <input type="hidden" name="page"
-				value="login" />
+			Username: <input type="text" name="username" /><br><br> 
+			Password: <input type="password" name="password" /><br><br> 
+			<input type="submit" name="action" value="Login" />&nbsp; 
+			<input type="Reset" value="Reset" /> 
+			<input type="hidden" name="page" value="login" />
 		</form>
 
 	</div>
