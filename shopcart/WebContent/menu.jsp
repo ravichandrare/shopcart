@@ -14,8 +14,9 @@
 	<input type="hidden" name="help" value="Help" />
 	</form>
 	
-	<form name="logout"  <%-- <%session.invalidate(); %> --%>action="login" method="post">
+	<form name="logout"  action="login" method="post">
 	<input type = "submit" name="action" value = "Logout"/>&nbsp;
+	<input type="hidden" name="session" value="Session" />
 	
 	</form>
 	</div>	
