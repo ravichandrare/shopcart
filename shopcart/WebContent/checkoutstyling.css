@@ -2,7 +2,7 @@
 
 
 #header {
-	background: grey;
+	background: #f08f20;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -12,7 +12,7 @@
 }
 
 #menu {
-	background: grey;
+	background: #10a2cb;
 	position: absolute;
 	top: 20%;
 	left: 0;
@@ -42,7 +42,7 @@ table, th, td {
 }
 
 #footer {
-	background: grey;
+	background: #d71a63;
 	position: absolute;
 	right: 0;
 	bottom: 0;

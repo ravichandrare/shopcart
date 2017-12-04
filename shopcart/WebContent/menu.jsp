@@ -9,11 +9,16 @@
 <body>
 	
 	<div>
+	<br>
+	<br>
+	<br>
+	<br>
 	<form name="help" action="help" method="post">
 	<input type = "submit" name="helpaction" value = "Help"/>&nbsp;
 	<input type="hidden" name="help" value="Help" />
 	</form>
-	
+	<br>
+	<br>
 	<form name="logout"  action="login" method="post">
 	<input type = "submit" name="action" value = "Logout"/>&nbsp;
 	<input type="hidden" name="session" value="Session" />
