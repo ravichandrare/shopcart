@@ -50,7 +50,7 @@
 				i++;
 		%>
 		<tr>
-			<td><input type="checkbox" name ="<%=id%>"></td>
+			<td><input type="checkbox" name = "id" value ="<%=id%>"></td>
 			<td><%=id%></td>
 			<td><%=name%></td>
 			<td><%=price%></td>

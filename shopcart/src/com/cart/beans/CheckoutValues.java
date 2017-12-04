@@ -1,11 +1,11 @@
 package com.cart.beans;
 
-public class Products {
-	
+public class CheckoutValues {
+
 	private int id;
 	private String name;
 	private double price;
-	
+	private int quantity;
 	
 	public int getId() {
 		return id;
@@ -25,12 +25,11 @@ public class Products {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	public String toString() {
-		return this.id + this.name+this.price;
-		
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
-
 }
