@@ -20,16 +20,25 @@
 	bottom: 10%;
 }
 
-	
+table, th, td {
+    
+    width: 30%;
+    border-collapse: collapse;
+    
+}
+
 
 
 #content {
 
+	
+	margin-right:20%;
 	position: absolute;
 	top: 20%;
 	left: 20%;
 	right: 0;
 	bottom: 10%;
+	
 }
 
 #footer {

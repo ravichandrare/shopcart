@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -53,7 +54,7 @@ public class LoginServlets extends HttpServlet {
 						if(isvalid) {
 							nextpage="/cart.jsp";
 							req.setAttribute("products",cartService.getproducts());
-							
+							HttpSession se=req.getSession(true);
 						}
 						else
 						{

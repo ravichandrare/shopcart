@@ -22,33 +22,70 @@
 
 	<%
 		al = (ArrayList<CheckoutValues>) session.getAttribute("selectedlist");
-		for (CheckoutValues c : al) {
-			int id = c.getId();
-			String name = c.getName();
-			double price = c.getPrice();
-			int quant = c.getQuantity();
+		double total = 0.00;
 	%>
-	<div id="content">
-		<form name="table" action="cart" method="post">
-			<table>
-				<tr>
-					
-					
-					<td style="padding:2px"><%=name%>   :     </td>
-					<td><%=quant%>  :     </td>
-					<%double result=quant*price;%>
-					<td>$<%=result %></td>
-					
-				</tr>
-				<%-- <%=id%>
-	<%=name%>
-	<%=price%>
-	<%=quant%>
-	<br> --%>
 
+	<div id="content">
+	<h2>Cart Summary</h2>
+		<form name="table" action="checkout" method="post">
+			
+			<%
+				for (CheckoutValues c : al) {
+					int id = c.getId();
+					String name = c.getName();
+					double price = c.getPrice();
+					int quant = c.getQuantity();
+			%>
+
+			<table>
+
+
+				<tr>
+
+
+					<td style="padding: 2px"><%=name%></td>
+					<td>:</td>
+					<td><%=quant%></td>
+					<%
+						double result = quant * price;
+							total = total + result;
+					%>
+					<td>:</td>
+					<td>$<%=result%></td>
+
+				</tr>
 				<%
 					}
 				%>
-			
+				<tr>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+				</tr>
+				<tr>
+
+					<td>TOTAL</td>
+					<td></td>
+					<td>:</td>
+					<td></td>
+					<td>$<%=total%></td>
+
+				</tr>
+			</table>
+			<br>
+			<input type="submit" name="action" value="back to cart">
+			<input type="submit" name="action" value="checkout">
+			<input type="hidden" name="page" value="checkout1" />
+		</form> 
+	</div>
+	
+	
+	
 </body>
+
+
+
+
 </html>

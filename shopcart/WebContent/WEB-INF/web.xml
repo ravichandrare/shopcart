@@ -38,4 +38,15 @@
   <servlet-name>shoping cart</servlet-name>
   <url-pattern>/cart</url-pattern>
   </servlet-mapping>  
+  
+  
+  <servlet>
+  <servlet-name>shopping checkout</servlet-name>
+  <servlet-class>com.servlets.CheckoutServlet</servlet-class>
+  </servlet>
+  
+	<servlet-mapping>
+	  <servlet-name>shopping checkout</servlet-name>
+	  <url-pattern>/checkout</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -42,7 +42,10 @@
 	height: 10%;
 	text-align: center;
 }
-
+p {
+    border: 1px solid powderblue;
+    margin-top: 50px;
+}
 #cart {
 	background: orange;;
 	text-align: center;

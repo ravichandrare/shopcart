@@ -55,18 +55,6 @@ public class CartServlet extends HttpServlet {
 				
 			}
 			se.setAttribute("selectedlist", val);
-		
-			/*HashMap hs=new HashMap();
-			hs.put(ids, quant);
-			se.setAttribute("selectedids", ids);
-			se.setAttribute("selectedquant",quant);*/
-			
-			/*for(String s : ids) {
-				System.out.println(s);
-			}
-			for(String s : quant) {	
-				System.out.println(s);
-			}*/
 			nextpage = "/cart.jsp";
 			
 			try {
