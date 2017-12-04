@@ -15,7 +15,7 @@ public class LoginServices {
 	{												
 		Connection con=ConnectionUtil.getConnection();
 		String ps = null;
-		if(username!=null||password!=null) {
+		if(username!=null&&password!=null) {
 		PreparedStatement st=con.prepareStatement("select password from logins where username=?");
 		st.setString(1, username);
 		ResultSet rs=st.executeQuery();

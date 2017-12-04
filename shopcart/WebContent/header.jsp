@@ -8,7 +8,6 @@
 </head>
 <body>
 <img src="resources/img1.png" alt ="shoppingcart" height="100%" width="10%" align="left"/>
-	This is the header
-
+<h1><i>ShopCart.com</i></h1>
 </body>
 </html>

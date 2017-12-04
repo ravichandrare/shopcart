@@ -17,26 +17,23 @@ import com.services.CartServices;
 import com.services.LoginServices;
 
 public class LoginServlets extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 7658192772554535814L;
 	private CartServices cartService;
 	private LoginServices loginservices;
-	
 
 	@Override
 	public void init() throws ServletException {
 		loginservices = new LoginServices();
 		cartService = new CartServices();
-		
+
 	}
-	
-	
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String page=StringUtils.trimToNull(req.getParameter("page"));
 		String action=StringUtils.trimToNull(req.getParameter("action"));
-		
+	
 		String nextpage="/login.jsp";
 	
 		if(page!=null)
@@ -70,6 +67,7 @@ public class LoginServlets extends HttpServlet {
 				}
 			}
 		}
+	
 		
 		 RequestDispatcher rd= req.getRequestDispatcher(nextpage);
 		 rd.forward(req, resp);
@@ -77,9 +75,7 @@ public class LoginServlets extends HttpServlet {
 
 	@Override
 	public void destroy() {
-	
-	}
 
-	
+	}
 
 }
