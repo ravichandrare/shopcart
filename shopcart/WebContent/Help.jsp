@@ -8,7 +8,8 @@
 
 <style>
 body{
-	background-color:green;
+color:white;
+	background-color:black;
 }
 </style>
 </head>

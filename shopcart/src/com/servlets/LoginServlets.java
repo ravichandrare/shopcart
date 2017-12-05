@@ -49,6 +49,7 @@ public class LoginServlets extends HttpServlet {
 					try {
 						isvalid = loginservices.authenticate(username,password);
 						if(isvalid) {
+							req.getSession().invalidate();
 							nextpage="/cart.jsp";
 							req.setAttribute("products",cartService.getproducts());
 							HttpSession se=req.getSession(true);
@@ -56,7 +57,7 @@ public class LoginServlets extends HttpServlet {
 						else
 						{
 							nextpage="/login.jsp";
-							req.setAttribute("loginerror", "Invalid username or passwaord");
+							req.setAttribute("loginerror", "Invalid username or password");
 						}
 					} catch (ClassNotFoundException e) {
 						e.printStackTrace();

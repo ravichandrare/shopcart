@@ -18,11 +18,14 @@
 	left: 0;
 	right: 90%;
 	bottom: 10%;
-	text-align: center
+	text-align: center;
 }
 
 	
 	table, th, td {
+	width:70%;
+	
+	text-align: center;
     border: 1px solid black;
 }
 
@@ -30,9 +33,11 @@
 
 	position: absolute;
 	top: 20%;
-	left: 20%;
+	left: 40%;
 	right: 0;
 	bottom: 10%;
+	width: 30%;
+    text-align: center;
 }
 
 #footer {

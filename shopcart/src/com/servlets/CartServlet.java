@@ -22,59 +22,59 @@ import com.services.CheckoutServices;
 
 public class CartServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 6551018637577762972L;
 	private CartServices cartService;
 	private CheckoutServices checkoutService;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		super.doGet(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession se=req.getSession(true);
-		String nextpage="/cart.jsp";
+		HttpSession se = req.getSession(true);
+		String nextpage = "/cart.jsp";
 		String actionname = req.getParameter("action");
-		ArrayList<CheckoutValues> val=new ArrayList<CheckoutValues>();
-		if (StringUtils.equalsAnyIgnoreCase("Add To Cart", actionname)) {
-		
-			String[] ids= req.getParameterValues("id");
-			String[] quant = req.getParameterValues("quantity");
-			List<String> list = new ArrayList<String>();
-			
-			for(String s :quant)
-			{
-				if(s!=null&&s.length()>0) {
-					list.add(s);
-				}
-			}
-			quant=list.toArray(new String[list.size()]);
-			try {
-				val=(ArrayList<CheckoutValues>) checkoutService.getCompleteValues(ids, quant);
-			} catch (ClassNotFoundException | SQLException e1) {
-				
-			}
-			se.setAttribute("selectedlist", val);
-			nextpage = "/cart.jsp";
-			
-			try {
-				req.setAttribute("products",cartService.getproducts());
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else if (StringUtils.equalsAnyIgnoreCase("CheckOut", actionname)) {
-			
-			nextpage = "/checkout.jsp";
-			se.getAttribute("selectedlist");
-					
-		}
-		RequestDispatcher rd = req.getRequestDispatcher(nextpage);
-		rd.forward(req, resp);
+		ArrayList<CheckoutValues> val = new ArrayList<CheckoutValues>();
+		try {
+			if (StringUtils.equalsAnyIgnoreCase("Add To Cart", actionname)) {
 
+				String[] ids = req.getParameterValues("id");
+				String[] quant = req.getParameterValues("quantity");
+
+				List<String> list = new ArrayList<String>();
+
+				for (String s : quant) {
+					if (s != null && s.length() > 0) {
+						list.add(s);
+					}
+				}
+				quant = list.toArray(new String[list.size()]);
+				val = (ArrayList<CheckoutValues>) checkoutService.getCompleteValues(ids, quant);
+
+				se.setAttribute("selectedlist", val);
+				nextpage = "/cart.jsp";
+				req.setAttribute("products", cartService.getproducts());
+
+			} else if (StringUtils.equalsAnyIgnoreCase("CheckOut", actionname)) {
+				nextpage = "/checkout.jsp";
+				se.getAttribute("selectedlist");
+			}
+			RequestDispatcher rd = req.getRequestDispatcher(nextpage);
+			rd.forward(req, resp);
+		} catch (NullPointerException | ClassNotFoundException | SQLException |ArrayIndexOutOfBoundsException ne) {
+			String nextpage1 = "/cart.jsp";
+			try {
+				req.setAttribute("products", cartService.getproducts());
+				nextpage1 = "/cart.jsp";
+			} catch (ClassNotFoundException|SQLException|NullPointerException e) {
+				e.printStackTrace();
+			} 
+			req.setAttribute("addtocarterror", "Please select one or more items");
+			RequestDispatcher rd = req.getRequestDispatcher(nextpage1);
+			rd.forward(req, resp);
+		}
 	}
 
 	@Override

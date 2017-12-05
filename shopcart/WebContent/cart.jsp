@@ -10,7 +10,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cart Page</title>
 <link rel="stylesheet" type="text/css" href="styling.css" />
 </head>
 <body>
@@ -27,42 +27,53 @@
 	int id = 0;
 	String name = null;
 	double price = 0.00;
-	int i =0;%>
-	
+	int i = 0;%>
 
-	<div id = "content">
-	<form name="table" action="cart" method="post">
-	<table>
-		<tr>
-			<th></th>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Quantity</th>
-		</tr>
-		<%	prod = (ArrayList<Products>) request.getAttribute("products");
-		
-		for (Products p : prod) {
 
-				id = p.getId();
-				name = p.getName();
-				price = p.getPrice();
-				i++;
+	<div id="content">
+		<br> <br>
+		<%
+			String error = (String) request.getAttribute("addtocarterror");
+			if (error != null) {
 		%>
-		<tr>
-			<td><input type="checkbox" name = "id" value ="<%=id%>"></td>
-			<td><%=id%></td>
-			<td><%=name%></td>
-			<td><%=price%></td>
-			<td><input type="text" name = "quantity"></td>
-		</tr>
-	<%
-		}
-	%>
-	</table>
-	<input type="submit" name = "action" value="Add To Cart" >
-	<input type="submit" name = "action" value="CheckOut">
-</form>
-</div>
+
+		<span style="color: red"> <%=error%></span>
+		<%
+			}
+		%>
+		<form name="table" action="cart" method="post">
+			<table>
+				<tr>
+					<th></th>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
+				</tr>
+				<%
+					prod = (ArrayList<Products>) request.getAttribute("products");
+
+					for (Products p : prod) {
+
+						id = p.getId();
+						name = p.getName();
+						price = p.getPrice();
+						i++;
+				%>
+				<tr>
+					<td><input type="checkbox" name="id" value="<%=id%>"></td>
+					<td><%=id%></td>
+					<td><%=name%></td>
+					<td><%=price%></td>
+					<td><input type="text" name="quantity"></td>
+				</tr>
+				<%
+					}
+				%>
+			</table>
+			<input type="submit" name="action" value="Add To Cart"> <input
+				type="submit" name="action" value="CheckOut">
+		</form>
+	</div>
 </body>
 </html>

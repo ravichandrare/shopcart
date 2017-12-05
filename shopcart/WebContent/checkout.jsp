@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="checkoutstyling.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cart Summary</title>
 </head>
 <body>
 
@@ -58,19 +58,19 @@
 					}
 				%>
 				<tr>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
+					<td> &nbsp </td>
+					<td> &nbsp  </td>
+					<td> &nbsp</td>
 					<td>&nbsp</td>
 					<td>&nbsp</td>
 				</tr>
 				<tr>
 
-					<td>TOTAL</td>
+					<td><b>TOTAL</b></td>
 					<td></td>
 					<td>:</td>
 					<td></td>
-					<td>$<%=total%></td>
+					<td><b>$<%=total%></b></td>
 
 				</tr>
 			</table>
