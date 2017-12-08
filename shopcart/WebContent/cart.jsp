@@ -67,12 +67,13 @@
 					<td><%=price%></td>
 					<td><input type="text" name="quantity"></td>
 				</tr>
+
 				<%
 					}
 				%>
 			</table>
-			<input type="submit" name="action" value="Add To Cart"> <input
-				type="submit" name="action" value="CheckOut">
+			<br> <input type="submit" name="action" value="Add To Cart">
+			<input type="submit" name="action" value="CheckOut">
 		</form>
 	</div>
 </body>

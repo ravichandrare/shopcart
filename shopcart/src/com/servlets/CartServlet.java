@@ -43,6 +43,10 @@ public class CartServlet extends HttpServlet {
 				String[] ids = req.getParameterValues("id");
 				String[] quant = req.getParameterValues("quantity");
 
+				if (ids.length==0 || quant.length==0) {
+					nextpage = "/login.jsp";
+				}
+
 				List<String> list = new ArrayList<String>();
 
 				for (String s : quant) {
@@ -58,19 +62,23 @@ public class CartServlet extends HttpServlet {
 				req.setAttribute("products", cartService.getproducts());
 
 			} else if (StringUtils.equalsAnyIgnoreCase("CheckOut", actionname)) {
+
 				nextpage = "/checkout.jsp";
 				se.getAttribute("selectedlist");
+
 			}
+			
 			RequestDispatcher rd = req.getRequestDispatcher(nextpage);
 			rd.forward(req, resp);
-		} catch (NullPointerException | ClassNotFoundException | SQLException |ArrayIndexOutOfBoundsException ne) {
+			
+		} catch (NullPointerException | ClassNotFoundException | SQLException | ArrayIndexOutOfBoundsException ne) {
 			String nextpage1 = "/cart.jsp";
 			try {
 				req.setAttribute("products", cartService.getproducts());
 				nextpage1 = "/cart.jsp";
-			} catch (ClassNotFoundException|SQLException|NullPointerException e) {
+			} catch (ClassNotFoundException | SQLException | NullPointerException e) {
 				e.printStackTrace();
-			} 
+			}
 			req.setAttribute("addtocarterror", "Please select one or more items");
 			RequestDispatcher rd = req.getRequestDispatcher(nextpage1);
 			rd.forward(req, resp);
