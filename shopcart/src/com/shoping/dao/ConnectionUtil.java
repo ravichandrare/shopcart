@@ -14,7 +14,7 @@ public class ConnectionUtil {
 	catch(SQLException ce){
 				throw new SQLException("unable to get connection");
 		}
-	
+	//test
 	finally {
 		connection =null;
 	}
